@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ProductRow from './ProductRow';
 import './App.css';
 
 class ProductTable extends Component {
@@ -32,23 +33,27 @@ class ProductTable extends Component {
 
     render() {
         return (
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Type</th>
-                        <th>Brand</th>
-                        <th>description</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                        <th>View</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {this.state.products.map((detail,i)
-                        => <ProductRow key={i} product={detail})}
-                </tbody>
-            </table>
+            <div>
+                <h1>{this.props.name}을(를) 위한 제품 목록</h1>
+            
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Brand</th>
+                            <th>description</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                            <th>View</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.products.map((detail,i)
+                            => <ProductRow key={i} product={detail})}
+                    </tbody>
+                </table>
+            </div>
         );
     }
 }

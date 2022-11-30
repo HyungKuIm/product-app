@@ -1,5 +1,6 @@
 import React from 'react';
-import ProductList from './ProductList';
+//import ProductList from './ProductList';
+import ProductTable from './ProductTable';
 import ProductHeader from './ProductHeader';
 import ProductFooter from './ProductFooter';
 
@@ -10,7 +11,7 @@ class ProductApp extends React.Component {
         return (
             <div>
                 <ProductHeader />
-                <ProductList name="데스크탑"/>
+                <ProductTable name="Son"/>
                 <ProductFooter />
             </div>
             
