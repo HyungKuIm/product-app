@@ -27,9 +27,7 @@ class ProductTable extends Component {
                 }
             ]
         }
-
-        
-    }
+    } // end of constructor
 
     render() {
         return (
@@ -49,13 +47,12 @@ class ProductTable extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.products.map((detail,i)
-                            => <ProductRow key={i} product={detail})}
+                        {this.state.products.map((detail,i) => <ProductRow key={i} product={detail}/>)}
                     </tbody>
                 </table>
             </div>
         );
-    }
+    }  // end of render
 }
 
 export default ProductTable;
