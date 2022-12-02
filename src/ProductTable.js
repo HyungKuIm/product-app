@@ -7,27 +7,23 @@ class ProductTable extends Component {
         super(props);
         this.state = {
             products: [
-                {
-                    name: "Samsung S23 Plus",
-                    type: "Mobile",
-                    description: "이번엔 제대로 나와 줬으면...",
-                    brand: "Samsung"
-                },
-                {
-                    name: "iPhone 15",
-                    type: "Mobile",
-                    description: "안접혀도 예쁨",
-                    brand: "Apple"
-                },
-                {
-                    name: "Dimche",
-                    type: "Kimchi 냉장고",
-                    description: "김치는 딤채",
-                    brand: "Dimche"
-                }
+                
             ]
         }
     } // end of constructor
+
+    componentDidMount() {
+        fetch('http://localhost:7090/products')
+            .then((response) => response.json())
+            .then((responseData)=>{
+                //console.log(responseData);
+                this.setState({
+                   products: responseData 
+                });
+            })
+            .catch(err => console.error(err));
+    }
+    
 
     render() {
         return (
